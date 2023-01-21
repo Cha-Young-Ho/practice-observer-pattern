@@ -33,6 +33,8 @@ public class Board {
     public void updateViewCount() {
 
         spinLock.acquire();
+
+        // -- 해당 로직이 10ms 걸린다는 조건 --
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
