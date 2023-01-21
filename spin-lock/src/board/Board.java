@@ -1,5 +1,7 @@
 package board;
 
+import lock.SpinLock;
+
 import java.util.UUID;
 
 public class Board {
@@ -10,11 +12,14 @@ public class Board {
     private String content;
     private String id;
 
+    private SpinLock spinLock;
+
     private Board(int viewCount, String title, String content, String id){
         this.viewCount = viewCount;
         this.title = title;
         this.content = content;
         this.id = id;
+        this.spinLock = new SpinLock();
     }
 
     public static Board getInstance(){
@@ -25,13 +30,19 @@ public class Board {
         return board;
     }
 
-    public void updateViewCount(){
+    public void updateViewCount() {
+
+        spinLock.acquire();
+
+        // -- 해당 로직이 10ms 걸린다는 조건 --
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         this.viewCount++;
+
+        spinLock.release();
     }
 
     // --- Getter ---
@@ -39,12 +50,8 @@ public class Board {
         return board;
     }
 
-    public int getViewCount() throws InterruptedException {
+    public int getViewCount() {
         return viewCount;
-    }
-
-    public void setViewCount(int viewCount){
-        this.viewCount = viewCount;
     }
 
     public String getTitle() {

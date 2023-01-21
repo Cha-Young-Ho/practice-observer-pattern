@@ -19,6 +19,7 @@ public class Main {
         es.awaitTermination(200, TimeUnit.SECONDS);
 
         long endTime = System.currentTimeMillis();
+
         System.out.println(board.getViewCount());
         System.out.println("Running Time : " + (endTime - startTime));
 

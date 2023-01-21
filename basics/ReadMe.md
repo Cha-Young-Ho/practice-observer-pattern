@@ -9,6 +9,7 @@ main에서 Client를 1000개 생성하여 호출을 하였습니다.
 ```java
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+        long startTime = System.currentTimeMillis();
         ExecutorService es = Executors.newFixedThreadPool(200);
         Board board = Board.getInstance();
         Client client = new Client();
@@ -19,7 +20,9 @@ public class Main {
         es.shutdown();
         es.awaitTermination(200, TimeUnit.SECONDS);
 
+        long endTime = System.currentTimeMillis();
         System.out.println(board.getViewCount());
+        System.out.println("Running Time : " + (endTime - startTime));
 
     }
 }
@@ -53,3 +56,9 @@ public class Main {
 
 
 > 위의 임계구역을 원자성을 유지하여 구현해보는것이 목표입니다.
+
+
+# Running 시간
+
+Running 시간은 다음과 같이 `97ms`가 걸린 것을 볼 수 있습니다.
+
