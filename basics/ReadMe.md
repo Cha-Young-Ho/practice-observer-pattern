@@ -30,6 +30,12 @@ public class Main {
 
 하지만 다음과 같이 매번 다르게 나옵니다.
 
+<img width="28" alt="스크린샷 2023-01-21 오후 4 08 26" src="https://user-images.githubusercontent.com/79268661/213848801-13d96a56-b017-4e1c-9421-ad310ee089c0.png">
+
+<img width="28" alt="스크린샷 2023-01-21 오후 4 08 34" src="https://user-images.githubusercontent.com/79268661/213848805-a44dd682-e23b-42fa-869c-dd712f687434.png">
+
+<img width="34" alt="스크린샷 2023-01-21 오후 4 08 54" src="https://user-images.githubusercontent.com/79268661/213848807-2081caca-4ccc-494e-acc7-e56348103d9c.png">
+
 
 
 # 문제
@@ -42,6 +48,8 @@ public class Main {
 > 임계 구역(critical section) 또는 공유변수 영역은 병렬컴퓨팅에서 둘 이상의 스레드가 동시에 접근해서는 안되는 공유 자원(자료 구조 또는 장치)을 접근하는 코드의 일부를 말한다. 
 
 임계구역은 다음과 같습니다.
+
+<img width="230" alt="스크린샷 2023-01-21 오후 4 23 17" src="https://user-images.githubusercontent.com/79268661/213848814-271c0e4c-1224-4652-9c18-eed5465dcd73.png">
 
 
 > 위의 임계구역을 원자성을 유지하여 구현해보는것이 목표입니다.
