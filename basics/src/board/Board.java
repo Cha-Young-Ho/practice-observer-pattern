@@ -26,6 +26,11 @@ public class Board {
     }
 
     public void updateViewCount(){
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         this.viewCount++;
     }
 
@@ -34,11 +39,11 @@ public class Board {
         return board;
     }
 
-    public int getViewCount() {
+    public int getViewCount() throws InterruptedException {
         return viewCount;
     }
 
-    public void setViewCount(int viewCount) {
+    public void setViewCount(int viewCount){
         this.viewCount = viewCount;
     }
 
