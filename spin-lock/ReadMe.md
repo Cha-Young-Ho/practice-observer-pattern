@@ -64,5 +64,10 @@ public void updateViewCount() {
 
 * 동시에 해당로직이 수행될 수 없기 때문에, 굉장히 많은 시간이 걸린다.
 
+<img width="168" alt="image" src="https://user-images.githubusercontent.com/79268661/213859494-c5bbf496-742c-4afc-a608-c53f2e0fd06d.png">
+
+앞선 `basic`에서는 조회 수가 보장이 되지 않지만 다음과 같이 굉장히 짧은 시간이 걸립니다.
+
+<img width="142" alt="스크린샷 2023-01-21 오후 5 33 02" src="https://user-images.githubusercontent.com/79268661/213859516-228423cd-bd18-4738-90b7-0e1c4e37704d.png">
 
 
