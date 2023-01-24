@@ -13,6 +13,17 @@
 
 그리하여 결과를 보면 다음과 같습니다.
 
+1. 최초에는 쓰레드가 계속해서 잠들게 됩니다.
+
+<img width="29" alt="스크린샷 2023-01-24 오후 2 26 37" src="https://user-images.githubusercontent.com/79268661/214218559-983dc031-ab31-4456-9b80-d473bdcc3bd5.png">
+
+2. 최초의 current thread가 작업을 끝내게되면 잠든 쓰레드가 일어나고, 다시 lock을 얻지못한 쓰레드들은 잠들게됩니다.
+<img width="38" alt="스크린샷 2023-01-24 오후 2 26 46" src="https://user-images.githubusercontent.com/79268661/214218630-4e3e964a-a4d7-4ce2-a19e-d9c785e0ada9.png">
+
+3. 최종적으로 모든 쓰레드가 완료되고, 메인 쓰레드가 종료됩니다.
+<img width="167" alt="스크린샷 2023-01-24 오후 2 26 54" src="https://user-images.githubusercontent.com/79268661/214218671-b96657fb-ac16-4242-80ea-cd383d85a257.png">
+
+
 
 스핀락과는 반대로 큰 영향을 받을 정도의 성능차이는 일어나지 않지만 실제 배포 상황에서는 상당히 큰 효과를 얻을 수 있는 경우가 많습니다.
 
