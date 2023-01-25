@@ -75,7 +75,7 @@ public final synchronized void join(final long millis)
 
 위의 로직은 일정 시간 대기를하며 지속해서 lock을 얻은 current thread가 살아있는지 확인을 하는 로직이 포함되어 있습니다.
 
-실제로는 스핀락과 매우 흡사한 형태의 코드를 가지고 있습니다.
+실제로는 스핀락과 매우 흡사한 형태의 코드를 가지고 있습니다. 이럴 경우 스핀락과 마찬가지로 cpu 자원을 사용하게 됩니다. 또한 context switching이 발생하기 때문에 성능상 좋지못합니다.
 
 그리하여 추 후에, 실제 thread를 직접 notify해주는 로직으로 수정해주어야 합니다.
 
